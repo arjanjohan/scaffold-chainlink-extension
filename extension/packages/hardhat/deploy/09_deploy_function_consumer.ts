@@ -1,6 +1,6 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
-import functionData from "../helper/functionData";
+import chainlinkAddresses from "../helper/chainlinkAddresses";
 
 /** Deploy FunctionsConsumer contract
  * @param hre HardhatRuntimeEnvironment object.
@@ -12,7 +12,7 @@ const functionsConsumer: DeployFunction = async function (hre: HardhatRuntimeEnv
   const { deployer } = await hre.getNamedAccounts();
   const { deploy } = hre.deployments;
   const networkName = hre.network.name;
-  const data = functionData[networkName];
+  const data = chainlinkAddresses[networkName];
 
   if (!data) {
     throw new Error(`No router and donID  configured for network: ${networkName}`);
