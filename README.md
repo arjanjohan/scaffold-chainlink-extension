@@ -1,5 +1,11 @@
 ## Instructions
 
+## Installation
+
+```shell
+npx create-eth@latest -e arjanjohan/scaffold-chainlink-extension
+```
+
 ### hardhat.config.ts
 
 #### Solidity version
