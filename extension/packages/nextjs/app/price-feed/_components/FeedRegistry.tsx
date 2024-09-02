@@ -9,6 +9,7 @@ import externalContracts from "~~/contracts/externalContracts";
 import { tokenAddresses } from "~~/utils/chainlink/networks";
 
 const FeedRegistry: React.FC = () => {
+  const contractName = "FeedRegistry";
   const chainId = 1; // Ethereum Mainnet
   const chainName = "Ethereum";
   const feedRegistryContract = externalContracts[chainId]?.FeedRegistry;
@@ -57,7 +58,7 @@ const FeedRegistry: React.FC = () => {
   return (
     <div className="max-w-lg mx-auto">
       <div className="flex flex-col bg-base-100 px-6 py-4 text-center items-center rounded-3xl">
-        <h2 className="text-2xl font-bold mb-4">Feed Registry</h2>
+        <h2 className="text-2xl font-bold">{contractName}</h2>
         <Address address={feedRegistryContract?.address} />
 
         <div className="w-full mb-4">

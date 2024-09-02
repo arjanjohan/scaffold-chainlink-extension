@@ -1,9 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { TxReceipt } from "./TxReceipt";
 import { useAccount } from "wagmi";
-import { LinkBalance } from "~~/components/chainlink";
+import { LinkBalance, TxReceipt } from "~~/components/chainlink";
 import { Address } from "~~/components/scaffold-eth";
 import deployedContracts from "~~/contracts/deployedContracts";
 import { useScaffoldContract, useScaffoldWriteContract } from "~~/hooks/scaffold-eth";
@@ -28,7 +27,7 @@ const MessageSender: React.FC = () => {
         setCcipChainId(selected.ccipChainId);
 
         // Find the chainId in the deployedContracts object and get the receiver contract address
-        const chainId = selected.chainId;
+        const chainId = selected.chainId as number;
         const receiverContract = deployedContracts[chainId]?.MessageReceiver;
 
         if (receiverContract) {
@@ -58,7 +57,9 @@ const MessageSender: React.FC = () => {
         functionName: "send",
         args: [ccipChainId, receiverAddress, message, 1],
       });
-      setTxHash(tx!);
+      if (tx) {
+        setTxHash(tx);
+      }
 
       console.log("Message sent!");
     } catch (error) {
