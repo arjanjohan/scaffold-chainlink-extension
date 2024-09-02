@@ -42,6 +42,12 @@ This Chainlink extensions come preconfigured for 3 networks. Ethereum Sepolia, B
     },
 ```
 
+### scaffold.config.ts
+Add more networks, to allow for cross-chain testing.
+```
+targetNetworks: [chains.sepolia, chains.baseSepolia, chains.avalancheFuji],
+```
+
 ### externalContracts.ts
 
 The `FeedRegistry` of the `Price Feeds` page uses the contract on Ethereum Mainnet to fetch data. This requires the contract address and ABI, which you must add manually. Replace `scaffold-chainlink/packages/nextjs/contracts/externalContracts.ts` by the `externalContracts.ts` that is located in the root of your project.

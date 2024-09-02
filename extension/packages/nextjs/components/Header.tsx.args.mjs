@@ -1,7 +1,7 @@
 export const menuObjects = `
 {
-    label: "CCIP",
-    href: "/ccip",
+    label: "Docs",
+    href: "/documentation",
   },
   {
     label: "Messaging",
@@ -29,6 +29,6 @@ export const menuObjects = `
   },
   {
     label: "Functions",
-    href: "/funtions",
+    href: "/functions",
   },
 `;
