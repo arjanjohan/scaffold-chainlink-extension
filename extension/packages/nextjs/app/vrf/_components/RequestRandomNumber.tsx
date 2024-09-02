@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { LinkBalance } from "~~/components/chainlink";
 import { Address } from "~~/components/scaffold-eth";
 import { useScaffoldContract, useScaffoldWriteContract } from "~~/hooks/scaffold-eth";
@@ -10,21 +9,18 @@ const RequestRandomNumber: React.FC = () => {
   const gasLimit = 100000;
   const numWords = 2;
   const requestConfirmations = 3;
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const { writeContractAsync: requestRandomWords, isPending } = useScaffoldWriteContract(contractName);
   const { data: contract } = useScaffoldContract({ contractName });
 
   const handleRequest = async () => {
     try {
-      const tx = await requestRandomWords({
+      await requestRandomWords({
         functionName: "requestRandomWords",
         args: [gasLimit, requestConfirmations, numWords],
       });
-      const receipt = await tx.wait();
-      setErrorMessage(null);
     } catch (error) {
-      setErrorMessage(error.message);
+      console.error("Error requesting randomness", error);
     }
   };
 
@@ -44,10 +40,6 @@ const RequestRandomNumber: React.FC = () => {
             {isPending ? "Requesting randomness" : "Submit request"}
           </button>
         </div>
-        {errorMessage && <div className="text-red-500 mt-4">{errorMessage}</div>}
-        {/* <div className="flex-grow basis-0">
-        <TxReceipt txHash={txHash} />
-      </div> */}
       </div>
     </div>
   );

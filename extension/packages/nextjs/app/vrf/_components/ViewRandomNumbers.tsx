@@ -24,7 +24,7 @@ const ViewRandomNumbers: React.FC = () => {
   const { data: vrfData } = useScaffoldReadContract({
     contractName,
     functionName: "getRequestStatus",
-    args: customRequestId ? [customRequestId] : lastRequestId ? [lastRequestId] : [],
+    args: customRequestId ? [customRequestId] : lastRequestId ? [lastRequestId] : ([] as [bigint | undefined]),
     watch: true,
   });
 
@@ -38,9 +38,9 @@ const ViewRandomNumbers: React.FC = () => {
     if (lastRequestId) {
       try {
         if (vrfData && vrfData[1] === true) {
-          setRandomNumbers(vrfData[2]);
+          setRandomNumbers(vrfData[2].map((num: bigint) => Number(num)));
           setErrorMessage(null);
-        } else if (vrfData[1] === false) {
+        } else if (vrfData && vrfData[1] === false) {
           setErrorMessage("Request is not fulfilled yet.");
         } else {
           setErrorMessage("No random numbers found.");
@@ -75,7 +75,7 @@ const ViewRandomNumbers: React.FC = () => {
         {randomNumbers.length > 0 && (
           <div className="bg-secondary rounded-3xl text-sm px-4 py-2 mt-4 w-full max-w-full break-words">
             <p className="font-bold m-0 mb-2">Result:</p>
-            <pre className="whitespace-pre-wrap break-words">{randomNumbers[0].toString()}</pre>
+            <pre className="whitespace-pre-wrap break-words">{randomNumbers.join(", ")}</pre>
           </div>
         )}
         {errorMessage && <p className="text-red-500 mt-4">{errorMessage}</p>}
