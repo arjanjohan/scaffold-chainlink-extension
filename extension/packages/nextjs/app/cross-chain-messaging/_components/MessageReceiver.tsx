@@ -36,7 +36,7 @@ const MessageReceiver: React.FC = () => {
     <div className="max-w-lg mx-auto">
       <div className="flex flex-col bg-base-100 px-6 py-4 text-center items-center rounded-3xl">
         {" "}
-        <h2 className="text-2xl font-bold">MessageReceiver</h2>
+        <h2 className="text-2xl font-bold">{contractName}</h2>
         <Address address={contract?.address} />
         <div className="flex gap-1 items-center mb-4 mt-4">
           <span className="font-bold text-sm">Message:</span>

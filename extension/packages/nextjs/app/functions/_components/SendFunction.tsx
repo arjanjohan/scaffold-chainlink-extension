@@ -35,20 +35,20 @@ const SendFunction: React.FC = () => {
 
     try {
       console.log("Sending calculation...");
-      await writeFunctionContract({
-        functionName: "sendRequest",
-        args: [
-          source,
-          "0x", // Empty string for user hosted secrets
-          0, // Slot ID for DON hosted secrets (empty in this case)
-          0n, // Version for DON hosted secrets (empty in this case)
-          args,
-          [], // bytesArgs - empty in this case
-          subscriptionId,
-          gasLimit,
-          ethers.utils.formatBytes32String(donId) // Job ID as bytes32
-        ],
-      });
+      // await writeFunctionContract({
+      //   functionName: "sendRequest",
+      //   args: [
+      //     source,
+      //     "0x", // Empty string for user hosted secrets
+      //     0, // Slot ID for DON hosted secrets (empty in this case)
+      //     0n, // Version for DON hosted secrets (empty in this case)
+      //     args,
+      //     [], // bytesArgs - empty in this case
+      //     subscriptionId,
+      //     gasLimit,
+      //     ethers.utils.formatBytes32String(donId) // Job ID as bytes32
+      //   ],
+      // });
 
       console.log("Calculation sent!");
     } catch (error) {

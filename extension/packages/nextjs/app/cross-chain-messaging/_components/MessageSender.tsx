@@ -70,7 +70,7 @@ const MessageSender: React.FC = () => {
   return (
     <div className="max-w-lg mx-auto">
       <div className="flex flex-col bg-base-100 px-6 py-4 text-center items-center rounded-3xl">
-        <h2 className="text-2xl font-bold">MessageSender</h2>
+        <h2 className="text-2xl font-bold">{contractName}</h2>
 
         <Address address={contract?.address} />
         <div className="mb-4 mt-4">

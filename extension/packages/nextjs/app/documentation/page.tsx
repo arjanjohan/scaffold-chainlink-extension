@@ -18,7 +18,10 @@ const Extension: NextPage = () => {
           Implement secure cross-chain token transfers, messaging, and NFT minting using Scaffold-ETH and Chainlink.
         </p>
         <div className="space-x-4">
-          <a href="https://github.com/KcPele/chainlink-ccip-starterkit" className="btn btn-primary text-white px-6 py-3 rounded shadow">
+          <a
+            href="https://github.com/KcPele/chainlink-ccip-starterkit"
+            className="btn btn-primary text-white px-6 py-3 rounded shadow"
+          >
             View on GitHub
           </a>
           <a href="#getstarted" className="bg-gray-800 text-white px-6 py-3 rounded shadow hover:bg-gray-900">
@@ -33,49 +36,49 @@ const Extension: NextPage = () => {
         <div className="flex flex-wrap justify-around">
           <Link
             href="/token-transfer"
-            className="hover:scale-[1.1] transition-all w-80 bg-white p-6 shadow-lg rounded-lg text-center mb-8"
+            className="hover:scale-[1.1] transition-all w-80 bg-base-100 p-6 shadow-lg rounded-lg text-center mb-8"
           >
             <h4 className="text-2xl font-bold mb-4">🔄 Token Transfers</h4>
             <p>Transfer tokens securely across different blockchains using Chainlink CCIP.</p>
           </Link>
           <Link
             href="/cross-chain-messaging"
-            className="hover:scale-[1.1] transition-all w-80 bg-white p-6 shadow-lg rounded-lg text-center mb-8"
+            className="hover:scale-[1.1] transition-all w-80 bg-base-100 p-6 shadow-lg rounded-lg text-center mb-8"
           >
             <h4 className="text-2xl font-bold mb-4">✉️ Cross-Chain Messaging</h4>
             <p>Send and receive data across multiple blockchains seamlessly.</p>
           </Link>
           <Link
             href="/cross-chain-minting"
-            className="hover:scale-[1.1] transition-all w-80 bg-white p-6 shadow-lg rounded-lg text-center mb-8"
+            className="hover:scale-[1.1] transition-all w-80 bg-base-100 p-6 shadow-lg rounded-lg text-center mb-8"
           >
             <h4 className="text-2xl font-bold mb-4">🖼️ NFT Minting</h4>
             <p>Mint NFTs on any destination chain via cross-chain requests.</p>
           </Link>
           <Link
             href="/vrf"
-            className="hover:scale-[1.1] transition-all  w-80 bg-white p-6 shadow-lg rounded-lg text-center mb-8"
+            className="hover:scale-[1.1] transition-all  w-80 bg-base-100 p-6 shadow-lg rounded-lg text-center mb-8"
           >
             <h4 className="text-2xl font-bold mb-4">🎲 Chainlink VRF</h4>
             <p>Generate and verify randomness securely using Chainlink VRF.</p>
           </Link>
           <Link
             href="/functions"
-            className="hover:scale-[1.1] transition-all w-80 bg-white p-6 shadow-lg rounded-lg text-center mb-8"
+            className="hover:scale-[1.1] transition-all w-80 bg-base-100 p-6 shadow-lg rounded-lg text-center mb-8"
           >
             <h4 className="text-2xl font-bold mb-4">🔧 Chainlink Functions</h4>
             <p>Execute off-chain computations and data retrievals using Chainlink Functions.</p>
           </Link>
           <Link
             href="/automation"
-            className="hover:scale-[1.1] transition-all w-80 bg-white p-6 shadow-lg rounded-lg text-center mb-8"
+            className="hover:scale-[1.1] transition-all w-80 bg-base-100 p-6 shadow-lg rounded-lg text-center mb-8"
           >
             <h4 className="text-2xl font-bold mb-4">🤖 Chainlink Automation</h4>
             <p>Automate contract executions and tasks seamlessly with Chainlink Automation.</p>
           </Link>
           <Link
             href="/price-feed"
-            className="hover:scale-[1.1] transition-all w-80 bg-white p-6 shadow-lg rounded-lg text-center mb-8"
+            className="hover:scale-[1.1] transition-all w-80 bg-base-100 p-6 shadow-lg rounded-lg text-center mb-8"
           >
             <h4 className="text-2xl font-bold mb-4">📈 Data feeds</h4>
             <p>Connect your smart contracts to the real-world data such as asset prices.</p>
@@ -86,7 +89,7 @@ const Extension: NextPage = () => {
       {/* Setup Section */}
       <section id="getstarted" className="container max-w-xl  mx-auto py-20">
         <h3 className="text-3xl font-bold text-center mb-12">Getting Started</h3>
-        <div className="bg-white p-8 shadow-lg rounded-lg">
+        <div className="bg-base-100 p-8 shadow-lg rounded-lg">
           <h4 className="text-2xl font-bold mb-4">🔄 Token Transfers</h4>
           <p className="mb-6">
             Chainlink CCIP allows secure and efficient transfer of tokens across different blockchains. Using the Token

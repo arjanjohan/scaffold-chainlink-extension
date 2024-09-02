@@ -7,7 +7,7 @@ const ChainlinkFunctions: React.FC = () => {
   return (
     <div className="flex justify-center pt-10">
       <div className="w-full max-w-screen-lg p-10">
-        <h1 className="text-3xl font-bold text-center mb-8">🔧 Cross-Chain Transfer</h1>
+        <h1 className="text-3xl font-bold text-center mb-8">🔧 Functions</h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="col-span-1 h-full">
             <div className="bg-base-100 p-6 rounded-3xl shadow-lg h-full">
