@@ -1,10 +1,27 @@
-## Instructions
+
+# 🏃 [Scaffold-ETH 2 Chainlink Extension](https://github.com/arjanjohan/scaffold-chainlink-extension)
+
+This SE2 extension is meant as a beginners guide to working with Chainlink. This extensions comes with example smart contracts and frontend components, which can serve as the basis for your Chainlink based dApp or project. This extension includes these features:
+
+- CCIP:
+  - Transfer tokens across chains using Chainlink CCIP
+  - Send and receive cross-chain messages
+  - Mint NFTs on a destination chain via cross-chain requests
+- Data Feeds
+- VRF
+- Automation
+- Functions
+
+
 
 ## Installation
 
+To create a SE2 project with this Chainlink extension, first execute this command:
 ```shell
 npx create-eth@latest -e arjanjohan/scaffold-chainlink-extension
 ```
+
+After that, some manual configuration is needed in `hardhat.config.ts` and `externalContracts.ts`.
 
 ### hardhat.config.ts
 
