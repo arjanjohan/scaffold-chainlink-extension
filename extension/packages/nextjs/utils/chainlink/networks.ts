@@ -63,4 +63,19 @@ export const tokenAddresses: tokenAddresses = {
       USD: "0x0000000000000000000000000000000000000348",
     },
   },
+  "Avalanche Fuji": {
+    assets: {
+      BnM: "0xD21341536c5cF5EB1bcb58f6723cE26e8D8E90e4",
+    },
+  },
+  Sepolia: {
+    assets: {
+      BnM: "0xFd57b4ddBf88a4e07fF4e34C487b99af2Fe82a05",
+    },
+  },
+  "Base Sepolia": {
+    assets: {
+      BnM: "0x88a2d74f47a237a62e7a51cdda67270ce381555e",
+    },
+  },
 };
