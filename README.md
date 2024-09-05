@@ -59,7 +59,6 @@ The `FeedRegistry` of the `Price Feeds` page uses the contract on Ethereum Mainn
 ### Deployed contracts on Sepolia Testnet
 
 - [AutomationConsumer](https://sepolia.etherscan.io/address/0xB24438749008195220687bB8beD20c32CFf9EF1A)
-- [AutomationCounter](https://sepolia.etherscan.io/address/0x1721Be7a85C5c1CbdE925aA5c080efFF0862d849)
 - [BGNFT](https://sepolia.etherscan.io/address/0xD9BaFcBE0625A03d826bc57546f876d9f6B734e4)
 - [DestinationMinter](https://sepolia.etherscan.io/address/0x43DAdc4B1BaF5b2276fC5f578Bf16578aba7153c)
 - [FunctionsConsumer](https://sepolia.etherscan.io/address/0x548051603370EBcEd09a66f30dFC51E4Bd36d163)
