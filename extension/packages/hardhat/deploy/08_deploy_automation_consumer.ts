@@ -1,6 +1,6 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
-import automationNetworkConfig from "../helper/automation";
+import chainlinkAddresses from "../helper/chainlinkAddresses";
 
 /**
  * Deploys the AutomationConsumer contract using the deployer account.
@@ -11,16 +11,17 @@ const deployAutomationConsumer: DeployFunction = async function (hre: HardhatRun
   const { deployer } = await hre.getNamedAccounts();
   const { deploy } = hre.deployments;
   const networkName = hre.network.name;
-  const data = automationNetworkConfig[networkName];
+  const data = chainlinkAddresses[networkName];
+
 
   if (!data) {
     throw new Error(`No router and donID  configured for network: ${networkName}`);
   }
-  const { linkTokenAddress, registrarAddress, registryAddress } = data;
+  const { link, automation_registry, automation_registrar } = data;
 
   await deploy("AutomationConsumer", {
     from: deployer,
-    args: [linkTokenAddress, registrarAddress, registryAddress],
+    args: [link, automation_registrar, automation_registry],
     log: true,
     autoMine: true,
   });

@@ -8,7 +8,7 @@ import chainlinkAddresses from "../helper/chainlinkAddresses";
  * @notice adds subscription to FunctionsRouter contract
  */
 
-const functionsConsumerExample: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
+const functionsConsumerGettingStarted: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   const { deployer } = await hre.getNamedAccounts();
   const { deploy } = hre.deployments;
   const networkName = hre.network.name;
@@ -17,16 +17,16 @@ const functionsConsumerExample: DeployFunction = async function (hre: HardhatRun
   if (!data) {
     throw new Error(`No router and donID  configured for network: ${networkName}`);
   }
-  const { router } = data;
+  const { functions_router, donId } = data;
 
-  await deploy("FunctionsConsumerExample", {
+  await deploy("GettingStartedFunctionsConsumer", {
     from: deployer,
-    args: [router],
+    args: [functions_router, donId],
     log: true,
     autoMine: true,
   });
 };
 
-export default functionsConsumerExample;
+export default functionsConsumerGettingStarted;
 
-functionsConsumerExample.tags = ["functionExample", "all"];
+functionsConsumerGettingStarted.tags = ["functionExample", "all"];

@@ -1,20 +1,13 @@
 "use client";
 
-import { useState } from "react";
-import { useAccount } from "wagmi";
-import { LinkBalance, TxReceipt } from "~~/components/chainlink";
+import { LinkBalance } from "~~/components/chainlink";
 import { Address } from "~~/components/scaffold-eth";
 import { useScaffoldContract, useScaffoldReadContract, useScaffoldWriteContract } from "~~/hooks/scaffold-eth";
-import { networks, tokenAddresses } from "~~/utils/chainlink/networks";
 
 const ResultsFunction: React.FC = () => {
 
-  const contractName = "FunctionsConsumerExample";
-  const { address, chain } = useAccount();
-  const [amount, setAmount] = useState<string>("");
-  const [destinationNetwork, setDestinationNetwork] = useState("");
-  const [ccipChainId, setCcipChainId] = useState<bigint | undefined>();
-  const [txHash, setTxHash] = useState<string | null>(null);
+  const contractName = "GettingStartedFunctionsConsumer";
+
 
   const { data: contract } = useScaffoldContract({ contractName });
 
@@ -29,6 +22,9 @@ const ResultsFunction: React.FC = () => {
     functionName: "s_lastResponse",
   });
   
+  console.log("lastError", lastError);
+  console.log("lastResponse", lastResponse);
+
   function decodeHex(hexString: string) {
     // Remove the '0x' prefix if it exists
     if (hexString.startsWith("0x")) {
